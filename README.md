@@ -8,12 +8,12 @@ local Object = require('object')
 
 ## Creating a class
 ```lua
-local Fruit = Object:extend()
+local Fruit = Object:extend('Fruit')
 ```
 ## Creating a constructor
 ```lua
 function Fruit:new(name, mass)
-	self.name = name or 'Fruit'
+	self.name = name or self.classname
 	self.mass = mass or 1
 	self.peeled = false
 end
@@ -99,7 +99,7 @@ print(newApple.keepsDoctorAway) -- true
 ## Checking object types
 ```lua
 local newPineapple = Pineapple()
-print(newPineapple:is(Apple)) -- false
-print(newPineapple:is(Fruit)) -- true
-print(newPineapple:is(Pineapple)) -- true
+print(Apple:is(newPineapple)) -- false
+print(Fruit:is(newPineapple)) -- true
+print(Pineapple:is(newPineapple)) -- true
 ```
