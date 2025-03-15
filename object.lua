@@ -24,7 +24,7 @@ local _METAMETHODS = { --- Lookup table used for filtering metamethods
 ---@class Object
 local Object = {}               --- Base object class
 
-Object.class = Object           --- Class reference. Also assigned to instances
+Object.class = Object           --- Class reference.
 Object.classname = "Object"     --- Class string identifier
 Object.super = false            --- Superclass reference
 Object._metaclass = {};         --- Container for class metamethods
