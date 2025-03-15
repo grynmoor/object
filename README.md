@@ -20,9 +20,9 @@ end
 ```
 ## Creating a class instance
 ```lua
-local newFruit = Fruit('New Fruit', 3)
-print(newFruit)         -- 'Fruit'
-print(newFruit.name)    -- 'New Fruit'
+local newFruit = Fruit("New Fruit", 3)
+print(newFruit)         -- "Fruit"
+print(newFruit.name)    -- "New Fruit"
 print(newFruit.mass)    -- 3
 print(newFruit.peeled)  -- false
 ```
@@ -57,7 +57,7 @@ print(newFruit.mass)   -- 1
 ```lua
 function Fruit:__tostring()
 	if self.mass > 0 then
-		return ('A %s%s with a mass of %d'):format(self.peeled and 'peeled ' or '', self.name, self.mass)
+		return ("A %s%s with a mass of %d'):format(self.peeled and "peeled " or "", self.name, self.mass)
 	else 
 		return "There's nothing left!"
 	end
@@ -69,7 +69,7 @@ end
 
 -- Example usage
 local newFruit = Fruit('Banana')
-print(newFruit) -- 'A Banana with a mass of 1'
+print(newFruit) -- "A Banana with a mass of 1"
 newFruit()
 print(newFruit) -- "There's nothing left!"
 ```
