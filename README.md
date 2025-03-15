@@ -57,7 +57,7 @@ print(newFruit.mass)   -- 1
 ```lua
 function Fruit:__tostring()
 	if self.mass > 0 then
-		return ("A %s%s with a mass of %d'):format(self.peeled and "peeled " or "", self.name, self.mass)
+		return ("A %s%s with a mass of %d"):format(self.peeled and "peeled " or "", self.name, self.mass)
 	else 
 		return "There's nothing left!"
 	end
