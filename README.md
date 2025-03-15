@@ -21,10 +21,10 @@ end
 ## Creating a class instance
 ```lua
 local newFruit = Fruit('New Fruit', 3)
-print(newFruit) -- 'Fruit'
-print(newFruit.name) -- 'New Fruit'
-print(newFruit.mass) -- 3
-print(newFruit.peeled) -- false
+print(newFruit)         -- 'Fruit'
+print(newFruit.name)    -- 'New Fruit'
+print(newFruit.mass)    -- 3
+print(newFruit.peeled)  -- false
 ```
 ## Creating methods
 ```lua
@@ -49,9 +49,9 @@ local newFruit = Fruit(nil, 5)
 print(newFruit.peeled) -- false
 newFruit:peel()
 print(newFruit.peeled) -- true
-print(newFruit.mass) -- 5
+print(newFruit.mass)   -- 5
 newFruit:bite(2)
-print(newFruit.mass) -- 1
+print(newFruit.mass)   -- 1
 ```
 ## Creating metamethods
 ```lua
@@ -100,7 +100,7 @@ print(newApple.repelsDoctor) -- true
 ## Checking object types
 ```lua
 local newPineapple = Pineapple()
-print(Apple:is(newPineapple)) -- false
-print(Fruit:is(newPineapple)) -- true
+print(Apple:is(newPineapple)) 	  -- false
+print(Fruit:is(newPineapple)) 	  -- true
 print(Pineapple:is(newPineapple)) -- true
 ```
