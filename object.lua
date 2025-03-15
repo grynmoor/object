@@ -75,8 +75,8 @@ function Object:wrap(t, ...)
 end
 
 
---- Class method. Returns true if the provided table is an instance of the class or a superclass
-function Object:instanced(t)
+--- Class method. Returns true if the provided table inherits from the class or a superclass
+function Object:is(t)
     local c = self.class
     local tc = getmetatable(t)
 
