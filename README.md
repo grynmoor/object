@@ -90,11 +90,11 @@ end
 ```lua
 local Apple = Fruit:extend()
 
-Apple.keepsDoctorAway = true
+Apple.repelsDoctor = true
 
 -- Example usage
 local newApple = Apple()
-print(newApple.keepsDoctorAway) -- true
+print(newApple.repelsDoctor) -- true
 ```
 ## Checking object types
 ```lua
