@@ -21,6 +21,7 @@ end
 ## Creating a class instance
 ```lua
 local newFruit = Fruit('New Fruit', 3)
+print(newFruit) -- 'Fruit'
 print(newFruit.name) -- 'New Fruit'
 print(newFruit.mass) -- 3
 print(newFruit.peeled) -- false
