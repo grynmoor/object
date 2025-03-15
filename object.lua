@@ -75,13 +75,14 @@ function Object:wrap(t, ...)
 end
 
 
---- Class method. Returns true if this class is equal to or inherits from the provided class
-function Object:is(class)
+--- Class method. Returns true if the provided table is an instance of the class or a superclass
+function Object:instanced(t)
     local c = self.class
+    local tc = getmetatable(t)
 
-    while c do
-        if c == class then return true end
-        c = c.super
+    while tc do
+        if tc == c then return true end
+        tc = tc.super
     end
 
     return false
@@ -89,12 +90,13 @@ end
 
 
 --- Class method. Returns a new class that inherits from this class
-function Object:extend()
+function Object:extend(className)
     local c = self.class
 
     local NewClass = {}
 
     NewClass.class = NewClass
+    NewClass.classname = className
     NewClass.super = c
     NewClass._metaclass = {}
 
