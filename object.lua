@@ -70,7 +70,8 @@ function Object:wrap(t, ...)
     if s then s:wrap(t, ...) end
 
     setmetatable(t, c)
-    if rawget(c, "new") then c.new(t, ...) end
+    c.new(t, ...)
+
     return t
 end
 
@@ -104,6 +105,10 @@ function Object:extend(className)
     for i, _ in pairs(_METAMETHODS) do
         NewClass._metaclass[i] = rawget(c._metaclass, i)
         NewClass[i] = rawget(c, i)
+    end
+
+    function NewClass:new(...)
+
     end
 
     return setmetatable(NewClass, NewClass._metaclass)
