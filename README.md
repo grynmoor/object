@@ -13,6 +13,8 @@ local Fruit = Object:extend('Fruit')
 ## Creating a constructor
 ```lua
 function Fruit:new(name, mass)
+	Fruit.super.new(self)
+
 	self.name = name or self.classname
 	self.mass = mass or 1
 	self.peeled = false
@@ -78,6 +80,8 @@ print(newFruit) -- "There's nothing left!"
 local Pineapple = Fruit:extend()
 
 function Pineapple:new(mass, tanginess)
+	Pineapple.super.new(self, nil, mass)
+
 	self.tanginess = tanginess or 50
 end
 ```
