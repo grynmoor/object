@@ -64,11 +64,8 @@ end
 
 --- Class method. Wraps the provided table into a class instance
 function Object:wrap(t, ...)
+
     local c = self.class
-    local s = c.super
-
-    if s then s:wrap(t, ...) end
-
     setmetatable(t, c)
     c.new(t, ...)
 
@@ -91,13 +88,13 @@ end
 
 
 --- Class method. Returns a new class that inherits from this class
-function Object:extend(className)
+function Object:extend(classname)
     local c = self.class
 
     local NewClass = {}
 
     NewClass.class = NewClass
-    NewClass.classname = className
+    NewClass.classname = classname
     NewClass.super = c
     NewClass._metaclass = {}
 
@@ -105,10 +102,6 @@ function Object:extend(className)
     for i, _ in pairs(_METAMETHODS) do
         NewClass._metaclass[i] = rawget(c._metaclass, i)
         NewClass[i] = rawget(c, i)
-    end
-
-    function NewClass:new(...)
-
     end
 
     return setmetatable(NewClass, NewClass._metaclass)
